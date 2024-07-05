@@ -1,0 +1,2 @@
+public class SplitInto4 {
+}
