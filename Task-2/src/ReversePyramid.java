@@ -10,11 +10,8 @@ public class ReversePyramid {
             for(int j=0;j<i;j++){
                 System.out.print(" ");
             }
-            for(int j=i;j<n-i;j++){
-                System.out.print("*");
-            }
-            for(int j=0;j<i;j++){
-                System.out.print(" ");
+            for(int j=i;j<n;j++){
+                System.out.print("* ");
             }
             System.out.println();
         }
