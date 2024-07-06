@@ -16,16 +16,13 @@ public class AntiDiagonals {
 
         for(int i=0;i<2*n-1;i++){
             int s=i<n?i+1:2*n-1-i;
+            //determine the size of the temp array
             int[] temp=new int[s];
-            int row;
-            int col;
-            if (i < n) {
-                row = 0;
-                col = i;
-            } else {
-                row = i - n + 1;
-                col = n - 1;
-            }
+
+            //determine start and end points
+            int row=i<n?0:i-n+1;
+            int col=i<n?i:n-1;
+
             int index=0;
             while(row<n && col>=0){
                 temp[index]=array[row][col];
@@ -33,6 +30,7 @@ public class AntiDiagonals {
                 col--;
                 index++;
             }
+            //add temp to the result
             result[i]=temp;
         }
 
