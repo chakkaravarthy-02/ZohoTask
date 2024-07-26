@@ -1,9 +1,9 @@
 public class BookDTO {
-    private  String title;
-    private String ISBN;
-    private String author;
-    private String publisher;
-    private int publishesYear;
+    public  String title;
+    public String ISBN;
+    public String author;
+    public String publisher;
+    public int publishesYear;
 
     public static String paperQuality = "90-Gsm";
 
@@ -23,7 +23,7 @@ public class BookDTO {
         return "BookName : "+title+"\nISBN : "+ISBN+"\nAuthor : "+author+"\nPublisher : "+publisher +"\nPublisher year : "+publishesYear;
     }
 }
-class Main{
+class BookMain{
     public static void main(String[] args) {
         BookDTO bookDTO=new BookDTO("AtomicHabits","9876-987-673","James clear","penguin","80-Gsm",1990);
         System.out.println(bookDTO.showBookDetail());
