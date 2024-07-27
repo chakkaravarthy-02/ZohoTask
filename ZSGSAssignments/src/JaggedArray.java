@@ -7,7 +7,7 @@ public class JaggedArray {
         System.out.println("Enter the no of people : ");
         int n=scanner.nextInt();
 
-        int[][] array=new int[n][];
+        int[][] array=new int[n][1];
 
         System.out.println("Enter the current weight of yours : ");
         for(int i=0;i<n;i++){
@@ -26,11 +26,27 @@ public class JaggedArray {
             }
             System.out.println("Enter your current weight");
             int currentWeight=scanner.nextInt();
-            addWeight(array,id,currentWeight);
+            addWeight(array,id-1,currentWeight);
+            System.out.println("Minimum of your weight : "+minimumOfWeight(array[id-1]));
+            scanner.nextLine();
+            System.out.println("Do you want to see you weights y/n : ");
+            String yesOrNo=scanner.nextLine();
+            if(yesOrNo.equals("y")){
+                printArrayOfWeight(array,id-1);
+            }
         }
-        for(int i=0;i<n;i++){
-            System.out.println(Arrays.toString(array[i]));
+    }
+
+    private static void printArrayOfWeight(int[][] arr,int id) {
+        System.out.println(Arrays.toString(arr[id]));
+    }
+
+    private static int minimumOfWeight(int[] arr) {
+        int min=Integer.MAX_VALUE;
+        for(int i=0;i<arr.length;i++){
+            min=Math.min(min,arr[i]);
         }
+        return min;
     }
 
     private static void addWeight(int[][] array, int id,int weight) {

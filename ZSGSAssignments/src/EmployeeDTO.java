@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class EmployeeDTO {
@@ -8,10 +9,13 @@ public class EmployeeDTO {
     private String pii;
     private double salary;
 
+    ArrayList<EmployeeDTO> employees=new ArrayList<>();
+
     public EmployeeDTO(String name, int idNo, String address) {
         this.name = name;
         this.idNo = idNo;
         this.address = address;
+        employees.add(this);
     }
 
     public String getPii() {
@@ -33,13 +37,18 @@ public class EmployeeDTO {
     public String showEmployeeDetails(){
         return "Employee Name : "+name+"\nEmployee id : "+"\nEmployee Address : "+address;
     }
+    public void showAllEmployeeDetails() {
+        for(EmployeeDTO employee:employees){
+            System.out.println(employee.showEmployeeDetails());
+        }
+    }
 }
 class EmployeeMain{
     public static void main(String[] args) {
         EmployeeDTO employeeDTO=new EmployeeDTO("Sanjay",1,"Tharamangalam,salem");
         employeeDTO.setPii("6808-8769-9876");
         employeeDTO.setSalary(89000);
-        System.out.println(employeeDTO.showEmployeeDetails());
+        employeeDTO.showAllEmployeeDetails();
         Scanner scanner=new Scanner(System.in);
         System.out.println("if you want to see your aadhar no : y/n");
         String wantToSeeAadhar=scanner.nextLine();
