@@ -10,7 +10,6 @@ public class AverageOf10 {
         }
         //Average=sum/total number
         double averageWeight=sumOfWeights/10.0;
-
         System.out.println("The average weight for 10 people is : "+averageWeight);
     }
 }

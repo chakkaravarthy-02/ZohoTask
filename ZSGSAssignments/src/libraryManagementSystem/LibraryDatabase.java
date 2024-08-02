@@ -1,7 +1,6 @@
 package libraryManagementSystem;
 
 import java.util.List;
-
 public class LibraryDatabase extends Librarian{
     private List<Book>listOfBooks;
 
